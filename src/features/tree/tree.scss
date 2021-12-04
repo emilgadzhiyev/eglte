@@ -1,0 +1,64 @@
+@import "../../variables.scss";
+@import "../icons/icons";
+
+.tree {
+  width: 100%;
+  $subtree-padding: 16px;
+  padding-left: $subtree-padding;
+  font-size: 14px;
+
+  &__node {
+    min-height: 32px;
+  }
+
+  &__link {
+    min-height: 32px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+
+    &_scrollable {
+      white-space: nowrap;
+    }
+  }
+
+  &__collapse {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 32px;
+    cursor: pointer;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.05);
+    }
+
+    &:before {
+      display: inline-flex;
+      align-items: center;
+      position: absolute;
+      left: -$subtree-padding;
+      width: 16px;
+      height: 16px;
+      justify-content: center;
+      @extend .icon;
+      content: "arrow_right";
+      transition: transform $transition-micro;
+    }
+  }
+
+  &__node > &__subtree {
+    display: none;
+  }
+
+  &__node_open > &__subtree {
+    padding-left: $subtree-padding;
+    display: block;
+  }
+
+  &__node_open > &__collapse {
+    &:before {
+      transform: rotate(90deg);
+    }
+  }
+}

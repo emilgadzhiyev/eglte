@@ -1,0 +1,39 @@
+.sat-btn {
+  background-color: transparent;
+  border: 1px solid #acacac;
+  position: relative;
+  vertical-align: middle;
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $unit $unit;
+  color: black;
+  &_primary {
+    background-color: $color-primary;
+    border-color: $color-primary;
+    color: white;
+  }
+  &_outline-primary {
+    background-color: transparent;
+    color: $color-primary;
+    border-color: $color-primary;
+  }
+  &_secondary {
+    background-color: $color-secondary;
+    border-color: $color-secondary;
+    color: white;
+  }
+  &_outline-secondary {
+    background-color: transparent;
+    color: $color-secondary;
+    border-color: $color-secondary;
+  }
+  &_small {
+    padding: $unit * 0.5 $unit;
+  }
+  &_large {
+    padding: $unit * 1.5 $unit;
+  }
+}

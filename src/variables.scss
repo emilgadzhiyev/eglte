@@ -1,0 +1,20 @@
+$enable-responsive-font-sizes: true;
+$unit: 8px;
+$color-primary: #3896c1;
+$color-secondary: #c13851;
+$color-gray-7: #f6f6f6;
+$color-gray-6: #e7e7e7;
+$color-gray-5: #cfcfcf;
+$color-gray-5: #acacac;
+$color-gray-4: #8d8d8d;
+$color-gray-3: #5b5b5b;
+$color-gray-2: #3b3b3b;
+$color-gray-1: #2d2d2d;
+
+$grid-columns: 6;
+$grid-columns: 12;
+$grid-gutter-width: $unit * 2;
+
+$transition-micro: 0.16s;
+$transition-mini: 0.26s;
+$transition-macro: 0.52s;

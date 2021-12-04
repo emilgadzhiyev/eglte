@@ -1,0 +1,80 @@
+mixin layout
+    doctype html
+    html
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1.0')
+        title EG-LTE
+    .layout
+        .layout__left
+            .layout__left-top
+                a.logo(href='/')
+                    img(src='/src/static/images/logo.png' alt='Main logo of project.')
+            .layout__left-content
+                .tree(id="main-tree")
+                    .tree__node
+                        .tree__collapse 2
+                        .tree__subtree
+                            .tree__node
+                                .tree__collapse 2.1
+                                .tree__subtree
+                                    .tree__node
+                                        .tree__node(href='')
+                                            .tree__collapse 2.1.1
+                                            .tree__subtree
+                                                .tree__node
+                                                    a.tree__link(href='/pages/welcomepage.html') Welcomepage
+                                                .tree__node
+                                                    a.tree__link(href='/pages/welcomepage-flush.html') Welcomepage (flush)
+                                                .tree__node
+                                                    a.tree__link(href='/pages/examples/ex0.html') Example 0
+                                                .tree__node
+                                                    a.tree__link(href='/pages/examples/ex1.html') Example 1
+                                                .tree__node
+                                                    a.tree__link(href='/pages/examples/ex2.html') Example 2
+                                                .tree__node
+                                                    a.tree__link(href='/pages/examples/ex3.html') Example 3
+                                                .tree__node
+                                                    a.tree__link(href='/pages/examples/ex4.html') Example 4
+                                                .tree__node
+                                                    a.tree__link(href='/pages/examples/ex6.html') Example 5
+                                                .tree__node
+                                                    a.tree__link(href='/pages/examples/ex6.html') Example 6
+                                                .tree__node
+                                                    a.tree__link(href='/pages/examples/ex7.html') Example 7
+                                                .tree__node
+                                                    a.tree__link(href='/pages/examples/ex8.html') Example 8
+            .layout__left-bottom
+                .copyright
+                    | Copyright EG-LTE. 2021 All rights reserved.
+        .layout__right
+            .layout__right-top
+                .navbar
+                    .navbar__item
+                        i.icon.icon_lg.hamburger menu
+                    .navbar__item.navbar__item_eager
+                        .scrollable-area
+                            .sat-breadcrumbs
+                                .breadcrumbs__crumb
+                                    a(href='/') Navigation 0&nbsp;
+                                .breadcrumbs__separator /&nbsp;
+                                .breadcrumbs__crumb
+                                    a(href='/') Navigation 1&nbsp;
+                                .breadcrumbs__separator /&nbsp;
+                                .breadcrumbs__crumb
+                                    a(href='/') Navigation 2&nbsp;
+                                .breadcrumbs__separator /&nbsp;
+                                .breadcrumbs__crumb
+                                    a(href='/') Navigation 3&nbsp;
+                                .breadcrumbs__separator /&nbsp;
+                                .breadcrumbs__crumb Navigation 4
+                    .navbar__item
+                        .user-bar
+                            .user-bar__username Gadzhiyev Emil Arif
+                            .user-bar__actions
+                                a.user-bar__action.icon(href="https://www.upturlab.com") settings
+                                a.user-bar__action.icon(href="https://www.upturlab.com") logout
+            .layout__right-content
+                block
+            
+

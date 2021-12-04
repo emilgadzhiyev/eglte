@@ -1,0 +1,9 @@
+.intro-text {
+  max-width: 65%;
+}
+
+@media (max-width: 768px) {
+  .intro-text {
+    min-width: 100%;
+  }
+}

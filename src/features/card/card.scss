@@ -1,0 +1,22 @@
+@import '../../variables.scss';
+@import '../../mixins';
+
+.sat-card {
+  background: white;
+  padding: 0 $unit * 2;
+  border-radius: 3px;
+  @include scrollbars($unit/2, $color-gray-5, transparent);
+  &_md {
+    max-height: 50vh;
+    overflow-x: auto;
+  }
+  &_md_mh {
+    max-height: 532px;
+    height: 532px;
+    overflow-x: auto;
+  }
+  &_sm {
+    max-height: 25vh;
+    overflow-x: auto;
+  }
+}

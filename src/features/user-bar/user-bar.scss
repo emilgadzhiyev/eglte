@@ -1,0 +1,32 @@
+@import "../../variables.scss";
+
+.user-bar {
+  display: flex;
+
+  &__username {
+    margin-right: $unit * 2;
+
+    @include media-breakpoint-down("sm") {
+      display: none;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+  }
+
+  &__action {
+    &:not(:last-child) {
+      margin-right: $unit * 2;
+    }
+
+    color: $color-gray-2;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-primary;
+      text-decoration: none;
+    }
+  }
+}

@@ -1,0 +1,77 @@
+@import "../../variables.scss";
+@import "../../mixins";
+
+.layout {
+  display: flex;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+
+  &__left {
+    &_hidden {
+      display: none;
+    }
+
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 15%;
+  }
+
+  &__left-top {
+    padding: $unit $unit * 3;
+  }
+
+  &__left-content {
+    display: flex;
+    flex-grow: 1;
+    overflow-y: auto;
+    // padding: $unit * 3 $unit * 2;
+    padding: $unit;
+    @include scrollbars($unit/2, $color-gray-5, transparent);
+  }
+
+  &__left-bottom {
+    padding: $unit $unit;
+  }
+
+  &__right {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.05), 0 10px 10px rgba(0, 0, 0, 0.05);
+    max-height: 100vh;
+    min-width: 0px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  &__right-top {
+    border-bottom: 1px solid $color-gray-6;
+    padding: $unit;
+  }
+
+  &__right-content {
+    padding: 8px $unit * 2;
+    background: $color-gray-7;
+    overflow: auto;
+    flex: 1;
+
+    &_flush {
+      padding: 0;
+      background: transparent;
+    }
+  }
+}
+
+.vertical-layout {
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  align-items: stretch;
+
+  &__item {
+    &_auto {
+      overflow: auto;
+      flex: 1;
+    }
+  }
+}

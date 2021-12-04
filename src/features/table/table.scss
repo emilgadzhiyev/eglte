@@ -1,0 +1,69 @@
+@import "../../variables.scss";
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    // @include scrollbars($unit/2, $color-gray-5, transparent);
+}
+
+thead {
+    border: none;
+    font-size: $unit * 1.75;
+    background-color: $color-primary;
+    color: white;
+}
+
+thead a {
+    color: white;
+}
+
+thead a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+tfoot {
+    background-color: $color-primary;
+    font-size: $unit * 1.75;
+    color: white;
+}
+
+td {
+    padding: $unit/2;
+    border: 1px solid white;
+    font-size: $unit * 1.75;
+}
+
+th {
+    padding: $unit/2;
+    border: 1px solid white;
+    font-size: $unit * 1.75;
+    border-top: none;
+    font-weight: normal;
+}
+
+tr {
+    &:nth-child(even) {
+        background-color: $color-gray-6;
+    }
+}
+
+table#last_table tr td:nth-child(4) {
+    position: sticky;
+    left: 0;
+    background-color: $color-primary;
+    color: white;
+    z-index: 0;
+}
+
+table thead {
+    z-index: 2;
+}
+
+table tfoot {
+    z-index: 2;
+}
+
+tfoot td {
+    border-bottom: none;
+}

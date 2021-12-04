@@ -1,0 +1,27 @@
+@import "../../variables.scss";
+@import "../../mixins.scss";
+@import "../grid/grid.scss";
+
+.navbar {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  &__item {
+    display: grid; // Dirty hack todo: figure out why it works
+    line-height: 1.5; // Another dirty hack todo: figure out why it works
+    font-size: 14px;
+
+    &:not(:last-child) {
+      margin-right: $unit * 2;
+    }
+    flex: 0 1 auto;
+    &_eager {
+      flex: 1 1 auto;
+    }
+  }
+}
+
+.scrollable-area {
+  overflow: auto;
+  @include scrollbars($unit/2, $color-gray-5, transparent);
+}

@@ -1,0 +1,76 @@
+.switcher-wrapper {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.switcher-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+
+    @media (max-width: 768px) {
+        font-size: 12px;
+    }
+}
+
+// .switcher-item::before {
+//     position: absolute;
+//     content: "";
+//     border-bottom: 2px solid $color-gray-6;
+//     width: 100%;
+//     top: 11px;
+//     left: -50%;
+//     z-index: 2;
+// }
+
+.switcher-item::after {
+    position: absolute;
+    content: "";
+    border-bottom: 2px solid $color-primary;
+    width: 100%;
+    top: 11px;
+    left: 50%;
+    z-index: 2;
+}
+
+.switcher-item .step-counter {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 24px;
+    background: $color-gray-6;
+    border: 1px solid $color-primary;
+}
+
+.switcher-item.active {
+    font-weight: bold;
+}
+
+.switcher-item.completed .step-counter {
+    background-color: $color-primary;
+    color: white;
+}
+
+.switcher-item.completed::after {
+    position: absolute;
+    content: "";
+    border-bottom: 2px solid $color-gray-6;
+    width: 100%;
+    top: 11px;
+    left: 50%;
+    z-index: 3;
+}
+
+.switcher-item:first-child::before {
+    content: none;
+}
+
+.switcher-item:last-child::after {
+    content: none;
+}

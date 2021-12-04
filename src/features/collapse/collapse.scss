@@ -1,0 +1,49 @@
+@import '../icons/icons';
+@import '../../variables';
+
+.collapse {
+    &__content {
+        height: 0;
+        overflow: hidden;
+        padding: 0 $unit * 2;
+        background-color: white;
+        transition: height $transition-macro;
+    }
+
+    &__hitarea {}
+
+    &_open{}
+}
+
+.collapse-hitarea{
+    display: flex;
+    background-color: $color-gray-7;
+    color: black;
+    cursor: pointer;
+    padding: $unit $unit;
+    align-items: center;
+    transition: background-color 0.18s;
+    &:hover {
+        background-color: $color-gray-6;
+    }
+    &__title{
+        flex: 0 1 100%;
+        &:before {
+            @extend .icon;
+            content: "arrow_right";
+            transition: transform $transition-micro;
+            margin-right: $unit;
+        }
+    }
+
+    &__action{}
+
+    &_active &{
+        &__title{
+            &:before {
+                transform: rotate(90deg);
+            }
+        }
+    }
+}
+

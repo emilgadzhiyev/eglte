@@ -1,0 +1,65 @@
+.typical-table-layout {
+    height: 100%;
+    display: flex;
+
+    &__left {
+        // min-width: 27.75%;
+        padding: $unit;
+        flex: 0 1 15%;
+        border-right: 1px solid $color-gray-6;
+        overflow: auto;
+
+        &_expanded {
+            min-width: 27.75%;
+        }
+
+        @include scrollbars($unit/2, $color-gray-5, transparent);
+    }
+
+    &__right {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        min-width: 0;
+    }
+
+    &__tools {
+        padding: $unit * 2 $unit * 3;
+        border-bottom: 1px solid $color-gray-6;
+    }
+
+    &__filters {
+        padding: $unit * 2 $unit * 3;
+    }
+
+    &__content {
+        flex: 1;
+        min-height: 0;
+    }
+
+    // Todo: переименовать в __scrollable-container
+    &__table {
+        overflow: auto;
+        height: 100%;
+        @include scrollbars($unit/2, $color-gray-5, transparent);
+    }
+
+    &__row {
+        display: flex;
+        height: 100%;
+    }
+
+    &__col {
+        flex: 1;
+    }
+
+    &__summary_right {
+        padding: $unit * 2 $unit * 3;
+        text-align: right;
+    }
+
+    &__summary_left {
+        padding: $unit * 2 $unit * 3;
+        text-align: left;
+    }
+}

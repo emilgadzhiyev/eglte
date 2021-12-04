@@ -1,0 +1,9 @@
+@import '../../variables.scss';
+
+.hamburger {
+  color: $color-gray-2;
+  cursor: pointer;
+  &:hover {
+    color: $color-primary;
+  }
+}
