@@ -2,10 +2,31 @@ const path = require('path')
 const fs = require('fs')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const PAGES_DIR = './src/pug/pages'
-const PAGES = fs.readdirSync(PAGES_DIR).filter((fileName) => fileName.endsWith('.pug'))
+
+const PAGES_DIR = './src/pug/pages';
+let stack = [PAGES_DIR];
+let directories = [];
+while (stack.length > 0) {
+  let dir = stack.shift();
+  //console.log(dir);
+  const dirs = fs.readdirSync(dir).filter(filename => fs.lstatSync(dir + '/' + filename).isDirectory());
+
+  dirs.forEach(dir1 => {
+    directories.push(dir + '/' + dir1);
+    stack.push(dir + '/' + dir1);
+  });
+}
+
+const PAGES = [];
+directories.forEach(dir => {
+  let pages = fs.readdirSync(dir).filter((fileName) => fileName.endsWith('.pug]'));
+  pages.forEach(page => {
+    PAGES.push(dir + '/' + page);
+  });
+});
+
 
 module.exports = {
   plugins: [
@@ -17,7 +38,7 @@ module.exports = {
     ...PAGES.map(
       (page) =>
         new HtmlWebpackPlugin({
-          template: `${PAGES_DIR}/${page}`,
+          template: `${page}`,
           filename: `./pages/${page.replace(/\.pug/, '.html')}`,
         })
     ),
