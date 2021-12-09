@@ -18,14 +18,17 @@ while (stack.length > 0) {
     stack.push(dir + '/' + dir1);
   });
 }
+directories.push(PAGES_DIR);
 
 const PAGES = [];
 directories.forEach(dir => {
-  let pages = fs.readdirSync(dir).filter((fileName) => fileName.endsWith('.pug]'));
+  let pages = fs.readdirSync(dir).filter((fileName) => fileName.endsWith('.pug'));
   pages.forEach(page => {
     PAGES.push(dir + '/' + page);
   });
 });
+
+console.log(PAGES.map(page => page.replace(/^\.\/src\/pug\/pages/, '').replace(/\.pug/, '.html')));
 
 
 module.exports = {
@@ -39,7 +42,7 @@ module.exports = {
       (page) =>
         new HtmlWebpackPlugin({
           template: `${page}`,
-          filename: `./pages/${page.replace(/\.pug/, '.html')}`,
+          filename: `./pages/${page.replace(/^\.\/src\/pug\/pages/, '').replace(/\.pug/, '.html')}`,
         })
     ),
   ],
@@ -126,3 +129,5 @@ module.exports = {
     port: 4646,
   },
 }
+
+
