@@ -124,6 +124,9 @@ module.exports = {
   },
 
   devServer: {
+    static: {
+      directory: path.join(__dirname, '/'),
+    },
     open: true,
     host: 'localhost',
     port: 4646,
