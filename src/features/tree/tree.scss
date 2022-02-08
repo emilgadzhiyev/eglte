@@ -25,12 +25,15 @@
   &__collapse {
     position: relative;
     display: flex;
+    padding: 0 8px;
     align-items: center;
     min-height: 32px;
     cursor: pointer;
 
     &:hover {
-      background: rgba(0, 0, 0, 0.05);
+      background: rgba(0,16,61,.08);
+      border-radius: 8px;
+      padding: 0 8px;
     }
 
     &:before {

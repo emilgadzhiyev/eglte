@@ -1,7 +1,6 @@
 @import "~@fontsource/ibm-plex-sans/index.css";
 @import "~bootstrap/scss/bootstrap-reboot";
 // @import "~highlight.js/styles/a11y-dark.css";
-
 // @import "~tom-select/dist/css/tom-select.default.css";
 
 @import "./variables.scss";
@@ -9,6 +8,7 @@
 
 body {
   font-family: "IBM Plex Sans", sans-serif;
+  background-color: #f6f7f8;
 }
 
 a {

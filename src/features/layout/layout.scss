@@ -8,6 +8,8 @@
   height: 100vh;
 
   &__left {
+    background-color: #f6f7f8;
+
     &_hidden {
       display: none;
     }
@@ -45,13 +47,13 @@
   }
 
   &__right-top {
-    border-bottom: 1px solid $color-gray-6;
     padding: $unit;
   }
 
   &__right-content {
     padding: 8px $unit * 2;
-    background: $color-gray-7;
+    border-radius: 12px 12px 0 0;
+    background-color: white;
     overflow: auto;
     flex: 1;
 

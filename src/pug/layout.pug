@@ -9,7 +9,7 @@ mixin layout
         .layout__left
             .layout__left-top
                 a.logo(href='/')
-                    img(src='/src/static/images/logo.png' alt='Main logo of project.')
+                    img(src='/src/static/images/logo.svg' alt='Main logo of project.')
             .layout__left-content
                 .tree(id="main-tree")
                     .tree__node
@@ -46,7 +46,9 @@ mixin layout
                                                     a.tree__link(href='/pages/examples/ex8.html') Example 8
             .layout__left-bottom
                 .copyright
-                    | Copyright EG-LTE. 2021 All rights reserved.
+                    | Copyright EG-LTE.
+                    br
+                    | 2021 All rights reserved.
         .layout__right
             .layout__right-top
                 .navbar
